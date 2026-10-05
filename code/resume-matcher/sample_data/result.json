@@ -1,0 +1,28 @@
+{
+  "candidate_summary": "Python developer with 2 years of experience building REST APIs with Flask and FastAPI.",
+  "match_score": 65,
+  "matched_skills": [
+    "Python",
+    "SQL",
+    "REST API design",
+    "Git",
+    "2+ years of experience"
+  ],
+  "missing_skills": [
+    "Django",
+    "Docker",
+    "AWS",
+    "CI/CD",
+    "unit testing"
+  ],
+  "strengths": [
+    "Meets the core 2-year experience threshold in Python backend development",
+    "Demonstrated experience designing REST APIs using modern frameworks like FastAPI and Flask",
+    "Strong database background with SQL and PostgreSQL"
+  ],
+  "suggestions": [
+    "Highlight any experience or personal projects using Django to cover the required framework.",
+    "Gain exposure to Docker and containerize your inventory management API to fulfill the containerization requirement.",
+    "Mention any unit testing practices, CI/CD tools, or AWS services used during your e-commerce project."
+  ]
+}

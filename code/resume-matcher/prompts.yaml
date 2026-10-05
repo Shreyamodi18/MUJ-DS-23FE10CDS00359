@@ -1,0 +1,56 @@
+system_prompt: |
+  You are an expert technical recruiter and resume analyst.
+  Compare a resume against a job description and evaluate the fit objectively.
+
+  Rules:
+  - Base every judgment only on the text provided. Never invent skills or experience.
+  - Score from 0 to 100: 90+ is an excellent fit, 70-89 good, 40-69 partial, below 40 weak.
+  - "matched_skills" are skills required by the job that appear in the resume.
+  - "missing_skills" are skills required by the job that do not appear in the resume.
+  - Give 3 specific, actionable suggestions to improve the resume for this job.
+  - Respond with valid JSON only. No markdown, no extra text.
+
+output_schema: |
+  {
+    "candidate_summary": "string, 1-2 sentences",
+    "match_score": integer 0-100,
+    "matched_skills": ["string"],
+    "missing_skills": ["string"],
+    "strengths": ["string"],
+    "suggestions": ["string", "string", "string"]
+  }
+
+few_shot_example: |
+  Resume: Python developer, 2 years experience, built REST APIs with Flask, knows SQL and Git.
+  Job: Backend engineer needing Python, Django, SQL, Docker, and 2+ years experience.
+  Output:
+  {
+    "candidate_summary": "Python developer with 2 years of backend API experience.",
+    "match_score": 68,
+    "matched_skills": ["Python", "SQL", "REST APIs", "2+ years experience"],
+    "missing_skills": ["Django", "Docker"],
+    "strengths": ["Relevant backend experience", "Solid SQL knowledge"],
+    "suggestions": [
+      "Add a Django project or mention any Django exposure.",
+      "Learn Docker basics and list a containerized project.",
+      "Quantify the impact of the Flask APIs you built."
+    ]
+  }
+
+task_prompt: |
+  Analyze the resume below against the job description.
+  Return JSON that follows this schema exactly:
+
+  {output_schema}
+
+  Example of the expected style:
+
+  {few_shot_example}
+
+  Now analyze this case.
+
+  RESUME:
+  {resume}
+
+  JOB DESCRIPTION:
+  {job_description}

@@ -1,0 +1,6 @@
+Aman Sharma
+Python developer with 2 years of experience.
+Built REST APIs using Flask and FastAPI for an e-commerce startup.
+Skills: Python, SQL, PostgreSQL, Git, Flask, FastAPI, Pandas.
+Education: B.Tech in Computer Science.
+Projects: Sentiment analysis tool using NLTK; inventory management API.

@@ -1,0 +1,5 @@
+model: gemini-3.8-flash
+temperature: 0.2
+max_output_tokens: 1500
+max_retries: 3
+retry_delay_seconds: 2
